@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)https://Jntm.site/ -->
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>鸡你太美</title>
+    <link href="./ZhiYin/new2.css" rel="stylesheet" media="screen" type="text/css">
+    <meta name="description" content="鸡你太美官方网站，鸡你太美是一个分享快乐的网站，在这里你能找到很多欢乐。">
+    <meta name="keywords" content="只因,鸡你太美">
+</head>
+
+<body>
+    <div id="top">
+        <div id="top_img">
+
+            <main id="top_main">
+                <div id="top_logo"><img src="./ZhiYin/toplogo.png" alt="鸡你太美"></div>
+                <div id="top_title"><img id="top_title01" alt="鸡你太美" src="./ZhiYin/toptitle01.png">
+                    <hr class="top_hr_style01"><span>北冥有鱼 · 其名为鲲 · 化而为鸡 · 鸡你太美</span>
+                </div>
+                <ul id="top_navlist">
+                    <a class="top_nav" onclick="stopMusic(); playMusic1()">
+                        <li>唱</li>
+                    </a>
+                    <a class="top_nav" onclick="stopImages(); showImage(event, './ZhiYin/dance.gif')">
+                        <li>跳</li>
+                    </a>
+                    <a class="top_nav" onclick="stopMusic(); playMusic2()">
+                        <li>RAP</li>
+                    </a>
+                    <a class="top_nav" onclick="stopImages(); showImage(event, './ZhiYin/basketball.gif')">
+                        <li>🏀</li>
+                    </a>
+                    <a class="top_nav" href="https://fangkuai767.github.io/EatKun/" target="_blank">
+                        <li>游戏</li>
+                    </a>
+                    <a class="top_nav" href="https://search.bilibili.com/article?keyword=ikun%E8%A1%A8%E6%83%85%E5%8C%85&order=attention" target="_blank">
+                        <li>图集</li>
+                    </a>
+                    <a class="top_nav" href="https://search.bilibili.com/all?keyword=%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E" target="_blank">
+                        <li>在线观看</li>
+                    </a>
+                </ul>
+            </main>
+
+            <div id="top_footer">
+                <span id="top_copyright">
+                    <hr class="top_hr_style02">
+                    鸡你太美官方网站，鸡你太美是一个分享快乐的网站，在这里你能找到很多欢乐。
+                    <hr class="top_hr_style02">
+                </span>
+            </div>
+        </div>
+    </div>
+    <style>
+        .mirror-image {
+            position: absolute;
+            transform: scaleX(-1);
+        }
+        .normal-image {
+            position: absolute;
+        }
+    </style>
+    <script>
+        var audio1 = new Audio('./ZhiYin/sing.mp3');
+        var audio2 = new Audio('./ZhiYin/rap.mp3');
+        function playMusic1() {
+            audio1.play();
+        }
+        function playMusic2() {
+            audio2.play();
+        }
+        function stopMusic() {
+            audio1.pause();
+            audio1.currentTime = 0;
+            audio2.pause();
+            audio2.currentTime = 0;
+        }
+        
+        function stopImages() {
+        var existingImages = document.querySelectorAll('img.normal-image, img.mirror-image');
+        existingImages.forEach(function(img) {
+            img.parentNode.removeChild(img);
+        });
+    }
+    function showImage(event, imgSrc) {
+        stopImages();
+        var li = event.target;
+        var img1 = document.createElement('img');
+        img1.src = imgSrc;
+        img1.classList.add('normal-image');
+        var img2 = document.createElement('img');
+        img2.src = imgSrc;
+        img2.classList.add('mirror-image');
+        li.appendChild(img1);
+        li.appendChild(img2);
+
+        var pageWidth = document.documentElement.clientWidth;
+        var pageHeight = document.documentElement.clientHeight;
+        img1.style.left = '25%';
+        img1.style.top = '60%';
+        img2.style.right = '25%';
+        img2.style.top = '60%';
+    }
+    </script>
+</body>
+</html>
